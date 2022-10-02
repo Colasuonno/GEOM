@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>&lt;model-viewer&gt; template</title>
+    <meta charset="utf-8">
+    <meta name="description" content="&lt;model-viewer&gt; template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="./styles.css" rel="stylesheet"/>
+    <!-- OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
+    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="popup.js"></script>
+  </head>
+  <body style="background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);  ">
+
+    <div class="sec-title centered">
+      <div class="title" style="font-size: clamp(2.5rem, 4rem, 4vw);
+      font-family: 'Share Tech Mono'"><b>MAKE YOUR CHOICE</b></div>
+      <div class="separator"><span></span>
+      </div>
+    </div>
+
+    <div style="height: 50%; width: 33%; position: absolute; left: 0px; top: 300px">
+        <model-viewer id="hotspot-camera-view-demo" style="background: transparent;" src="aura.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="0" environment-image="legacy" shadow-softness="0" exposure="2" auto-rotate camera-orbit="-55.86deg 84.07deg auto">
+            <div class="progress-bar hide" slot="progress-bar">
+                <div class="update-bar"></div>
+            </div>
+          </model-viewer>  
+          <button class="stripe-button" onclick="openPopup()" style="position: absolute; right: 220px; top: 340px">AURA<svg class="HoverArrow" width="12" height="12" aria-hidden="true">
+            <g fill-rule="evenodd">
+              <path class="HoverArrow__linePath" d="M0 6h8" />
+              <path class="HoverArrow__tipPath" d="m1 1 5 5-5 5" />
+            </g>
+          </svg>
+        </button>
+      
+    </div>
+
+    <div style="height: 50%; width: 33%; position: absolute; right: 0px; top: 300px">
+        <model-viewer id="hotspot-camera-view-demo2" src="jason.glb" style="background: transparent" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="0" environment-image="legacy" shadow-softness="0" exposure="2" auto-rotate camera-orbit="-55.86deg 84.07deg auto">
+            <div class="progress-bar hide" slot="progress-bar">
+                <div class="update-bar"></div>
+            </div>
+          </model-viewer>  
+
+          <button class="stripe-button wrong" style="position: absolute; right: 200px; top: 340px">JASON<svg class="HoverArrow" width="12" height="12" aria-hidden="true">
+            <g fill-rule="evenodd">
+              <path class="HoverArrow__linePath" d="M0 6h8" />
+              <path class="HoverArrow__tipPath" d="m1 1 5 5-5 5" />
+            </g>
+          </svg>
+        </button>
+
+    </div>
+
+    <div style="height: 50%; width: 33%; position: absolute; left: 500px; top: 300px">
+        <model-viewer id="hotspot-camera-view-demo2" src="terra.glb" style="background: transparent" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="0" environment-image="legacy" shadow-softness="0" exposure="2" auto-rotate camera-orbit="-55.86deg 84.07deg auto">
+            <div class="progress-bar hide" slot="progress-bar">
+                <div class="update-bar"></div>
+            </div>
+          </model-viewer>  
+          <button class="stripe-button" style="position: absolute; left: 160px; top: 340px">TERRA<svg class="HoverArrow" width="12" height="12" aria-hidden="true">
+            <g fill-rule="evenodd">
+              <path class="HoverArrow__linePath" d="M0 6h8" />
+              <path class="HoverArrow__tipPath" d="m1 1 5 5-5 5" />
+            </g>
+          </svg>
+        </button>
+    </div>
+
+
+    <div class="popup" id="popup">
+      <div class="popup-content">
+        <img id="popup" src="https://sudip-bhowmick.github.io/images/img/close.svg" alt="close" class="close">
+        <div>
+            <h1 style="text-align:  center">Corretto</h1>
+            <a style="text-align: center; white-space: pre-line;">It takes simultaneous measurements of Earth’s atmosphere, land and oceans.
+              Its mission is to understand how Earth is changing and to identify the consequences for life on Earth. Its data can be used to develop new technologies for disaster predictions, characterization, and risk reduction from wildfires, volcanoes, floods and droughts.
+              </a>
+              <a> Hai vinto un bel cazzo in culo</a>
+
+              <model-viewer id="hotspot-camera-view-demo" style="background: transparent;" src="antenna.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="0" environment-image="legacy" shadow-softness="0" exposure="2" auto-rotate camera-orbit="-55.86deg 84.07deg auto">
+                <div class="progress-bar hide" slot="progress-bar">
+                    <div class="update-bar"></div>
+                </div>
+              </model-viewer>  
+             <script src="script.js"></script>
+              <!-- Loads <model-viewer> for browsers: -->
+              <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+          </div>
+      </div>
+    </div>
+    
+
+
+      <script src="script.js"></script>
+      <!-- Loads <model-viewer> for browsers: -->
+      <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  </body>
+</html>

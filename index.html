@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>  
+    <title>&lt;model-viewer&gt; template</title>
+    <meta charset="utf-8">
+    <meta name="description" content="&lt;model-viewer&gt; template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="./styles.css" rel="stylesheet"/>
+    <!-- OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
+    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+  </head>
+  <body style="background-image: url('space.jpg')">
+    <!-- <model-viewer> HTML element -->
+        <model-viewer id="hotspot-camera-view-demo" style="background: transparent" src="earth.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="0" environment-image="legacy" shadow-softness="0" exposure="2" auto-rotate camera-orbit="-55.86deg 84.07deg auto">
+          <button class="Hotspot"  slot="hotspot-2" data-position="-321.9260178958273m -196.8413754781525m 330.04581581493386m" data-normal="-0.6106305484093745m -0.42308753132560356m 0.6694230905683439m" data-visibility-attribute="visible">
+              <div class="HotspotAnnotation">Fire</div>
+          </button>
+          <div class="progress-bar hide" slot="progress-bar">
+              <div class="update-bar"></div>
+          </div>
+        </model-viewer>  
+
+        <script type="module">
+         
+         const modelViewer1 = document.querySelector("#hotspot-camera-view-demo");
+          const annotationClicked = (annotation) => {
+            window.location.href = "/quiz.html"
+          }
+        
+          modelViewer1.querySelectorAll('button').forEach((hotspot) => {
+            hotspot.addEventListener('click', () => annotationClicked(hotspot));
+          });
+        </script>
+
+       <script src="script.js"></script>
+        <!-- Loads <model-viewer> for browsers: -->
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  </body>
+</html>
